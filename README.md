@@ -74,7 +74,7 @@
 
 4. 启动脚手架服务, 访问首页.
 
-   ```shll
+   ```shell
    npm  run  serve
    ```
 
