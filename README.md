@@ -45,7 +45,7 @@
 
    选择合适的配置: 
 
-   ![image-20230322174012583](D:\Entertainment\Rouran\Personage\BootCamp\Project-summit\assets\image-20230322174012583.png)
+  ![输入图片说明](assets/image-20230322174012583.png)
 
 2. 进入项目目录下, 安装所需要模块. 
 
