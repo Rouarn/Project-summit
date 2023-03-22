@@ -6,7 +6,7 @@
 
 body {
   margin: 0 auto;
-  font-size: 12px;
+  font-size: 16px;
   font-family: Verdana;
   line-height: 1.5;
 }
@@ -76,7 +76,7 @@ button,
 input,
 select,
 textarea {
-  font: 12px/1.5 tahoma, arial, Verdana, sans-serif;
+  font: 16px/1.5 tahoma, arial, Verdana, sans-serif;
 }
 h1,
 h2,
