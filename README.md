@@ -36,7 +36,7 @@
 
 1. 新建干净目录 运行以下命令, 新建项目: Project-summit-client
 
-   ```shll
+   ```shell
    vue create project-summit-client
    ```
 
@@ -57,30 +57,29 @@
    // 引入 font-awesome 图标库
    import "font-awesome/css/font-awesome.css";
    ```
-   
+
    `App.vue` 的 `style `中, 配置配置`font-awesome`.
-   
+
    ```vue
    // 配置font-awesome 图标库
    @import "../node_modules/font-awesome/css/font-awesome.css";
    ```
-   
+
    正常使用
-   
+
    ```vue
    <i class="fa fa-user"></i>
-<i class="fa fa-tree"></i>
+   <i class="fa fa-tree"></i>
    ```
 
 4. 启动脚手架服务, 访问首页.
 
-   ```shll
+   ```shell
    npm  run  serve
-   ```
 
 5. 或者克隆 Gitee 仓库中的已有项目, 在干净目录中运行以下代码:
 
-   ```shll
+   ```shell
    git  clone https://gitee.com/woyuxiaji/project-summit.git
    ```
 
