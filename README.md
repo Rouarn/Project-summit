@@ -51,30 +51,25 @@
    npm install font-awesome --save
    ```
 
-3. `App.vue`中, 配置引入`font-awesome`.
+3. `mian.js`中, 配置引入`font-awesome`.
 
-   ```vue
-   <style lang="scss">
-   [class^="el-icon-fa"],
-   [class*=" el-icon-fa"] {
-     display: inline-block;
-     font: normal normal normal 14px/1 FontAwesome !important;
-     font-size: inherit;
-     text-rendering: auto;
-     -webkit-font-smoothing: antialiased;
-     -moz-osx-font-smoothing: grayscale;
-   }
-   @import "../node_modules/font-awesome/css/font-awesome.css";
-   @import "../src/assets/css/reset.css";
-   $fa-css-prefix: el-icon-fa;
-   </style>
+   ```js
+   // 引入 font-awesome 图标库
+   import "font-awesome/css/font-awesome.css";
    ```
-
+   
+   `App.vue` 的 `style `中, 配置配置`font-awesome`.
+   
+   ```vue
+   // 配置font-awesome 图标库
+   @import "../node_modules/font-awesome/css/font-awesome.css";
+   ```
+   
    正常使用
-
+   
    ```vue
    <i class="fa fa-user"></i>
-   <i class="fa fa-tree"></i>
+<i class="fa fa-tree"></i>
    ```
 
 4. 启动脚手架服务, 访问首页.
