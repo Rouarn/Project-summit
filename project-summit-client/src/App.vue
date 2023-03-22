@@ -29,20 +29,8 @@ nav {
     }
   }
 }
-</style>
-
-<style lang="scss">
 // 配置font-awesome 图标库
-[class^="el-icon-fa"],
-[class*=" el-icon-fa"] {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome !important;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 @import "../node_modules/font-awesome/css/font-awesome.css";
+// 配置 CSS 样式重置
 @import "../src/assets/css/reset.css";
-$fa-css-prefix: el-icon-fa;
 </style>
