@@ -82,6 +82,22 @@
    ```shell
    git  clone https://gitee.com/woyuxiaji/project-summit.git
    ```
+   
+   克隆完成需要运行以下代码恢复项目所使用的组件库
+   
+   `进入项目目录:`
+   
+   ```shell
+   cd project-summit\project-summit-client
+   ```
+   
+   `恢复项目使用的组件库:`
+   
+   ```shell
+   npm install
+   ```
+   
+   
 
 #### 使用说明
 
