@@ -1,23 +1,21 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/img/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <!-- 首页导航栏 -->
+    <NAV></NAV>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
-
+import NAV from "@/components/index/nav.vue";
 export default {
-  name: "HomeView",
-  components: {
-    HelloWorld,
+  components: { NAV },
+  data() {
+    return {};
   },
+  mounted() {},
+  methods: {},
 };
 </script>
-<style lang="scss" scoped>
-.home > img {
-  margin: 0 auto;
-}
-</style>
+<style lang="scss" scoped></style>
