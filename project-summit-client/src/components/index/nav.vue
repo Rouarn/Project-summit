@@ -43,9 +43,9 @@
             <input
               type="text"
               v-model="search"
-              :class="{ isfocus: focus == 1 }"
-              @focus="focus = 1"
-              @blur="focus = 0"
+              :class="{ isfocus: search_focus == 1 }"
+              @focus="search_focus = 1"
+              @blur="search_focus = 0"
               placeholder="罪罚"
             />
             <transition name="search_hint">
@@ -103,6 +103,7 @@ export default {
       ],
       is_search_type: false,
       focus: 0,
+      search_focus: "",
       hot: "",
     };
   },
@@ -181,7 +182,6 @@ export default {
               }
             }
             > .search_type_item {
-              top: 10px;
               left: -23px;
               display: flex;
               flex-direction: column;
