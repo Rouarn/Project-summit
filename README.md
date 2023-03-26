@@ -52,7 +52,24 @@
    npm install font-awesome --save
    ```
 
-3. `mian.js`中, 配置引入`font-awesome`.
+3. `mian.js`中, 配置引入`ElementUI`.
+
+   ```js
+   // 引入 ElementUI 组件库
+   import ElementUI from "element-ui";
+   import "element-ui/lib/theme-chalk/index.css";
+   
+   Vue.use(ElementUI);
+   ```
+
+   正常使用
+
+   ```vue
+    <el-button>默认按钮</el-button>
+    <el-button type="primary">主要按钮</el-button>
+   ```
+
+4. `mian.js`中, 配置引入`font-awesome`.
 
    ```js
    // 引入 font-awesome 图标库
@@ -73,31 +90,31 @@
    <i class="fa fa-tree"></i>
    ```
 
-4. 启动脚手架服务, 访问首页.
+5. 启动脚手架服务, 访问首页.
 
    ```shell
    npm  run  serve
 
-5. 或者克隆 Gitee 仓库中的已有项目, 在干净目录中运行以下代码:
+6. 或者克隆 Gitee 仓库中的已有项目, 在干净目录中运行以下代码:
 
    ```shell
    git  clone https://gitee.com/woyuxiaji/project-summit.git
    ```
-   
+
    克隆完成需要运行以下代码恢复项目所使用的组件库
-   
+
    `进入项目目录:`
-   
+
    ```shell
    cd project-summit\project-summit-client
    ```
-   
+
    `恢复项目使用的组件库:`
-   
+
    ```shell
    npm install
    ```
-   
+
    
 
 #### 使用说明
