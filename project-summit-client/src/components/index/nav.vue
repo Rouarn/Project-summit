@@ -75,7 +75,7 @@
         <i
           class="fa fa-clock-o"
           title="播放记录"
-          @click="isrecord = !isrecord"
+          @click.stop="isrecord = !isrecord"
           ref="isrecord"
         >
           <transition name="recently_played_videos">
@@ -99,7 +99,7 @@
         <i
           class="fa fa-user"
           title="登录"
-          @click="user_login"
+          @click.stop="user_login"
           ref="user_login"
         ></i>
         <ul class="user_info" v-if="main_Login_status && is_user_info">
