@@ -99,7 +99,7 @@
         <i
           class="fa fa-user"
           title="登录"
-          @click.stop="user_login"
+          @click="user_login"
           ref="user_login"
         ></i>
         <ul class="user_info" v-if="main_Login_status && is_user_info">
@@ -181,8 +181,8 @@ export default {
       }
 
       if (this.$refs.user_login) {
-        let isSelf = this.$refs.user_login.contains(e.target);
-        if (!isSelf) {
+        let isuesrinfo = this.$refs.user_login.contains(e.target);
+        if (!isuesrinfo && this.is_user_info) {
           this.is_user_info = !this.is_user_info;
         }
       }
