@@ -115,6 +115,13 @@
    npm install
    ```
 
+   管理员账号:
+   
+   ```tex
+   user:admin
+   password:123456
+   ```
+   
    
 
 #### 使用说明
