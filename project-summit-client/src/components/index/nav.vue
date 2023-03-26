@@ -71,9 +71,43 @@
         </div>
       </div>
       <div class="nav_center_right">
-        <i class="fa fa-android"></i>
-        <i class="fa fa-clock-o"></i>
-        <i class="fa fa-user"></i>
+        <i class="fa fa-android" title="APP下载"></i>
+        <i
+          class="fa fa-clock-o"
+          title="播放记录"
+          @click="isrecord = !isrecord"
+          ref="isrecord"
+        >
+          <transition name="recently_played_videos">
+            <ul class="fa-clock-o_record" v-show="isrecord">
+              <li>
+                <span>播放记录</span><span @click="record = null">[清空]</span>
+              </li>
+              <li
+                class="fa-clock-o_record_item"
+                v-for="item in record"
+                :key="item[0]"
+              >
+                <span> {{ item[0] }}</span>
+                <span style="color: #ff0000" :title="item[0]">
+                  {{ item[1] }}</span
+                >
+              </li>
+            </ul>
+          </transition>
+        </i>
+        <i
+          class="fa fa-user"
+          title="登录"
+          @click="user_login"
+          ref="user_login"
+        ></i>
+        <ul class="user_info" v-if="main_Login_status && is_user_info">
+          <li>用户名: {{ this.main_Login_status.nickname }}</li>
+          <li>账号: {{ this.main_Login_status.username }}</li>
+          <li>手机: {{ this.main_Login_status.phone }}</li>
+          <li>邮箱: {{ this.main_Login_status.email }}</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -105,8 +139,18 @@ export default {
       focus: 0,
       search_focus: "",
       hot: "",
+      record: [
+        ["斗罗大陆", "第01集"],
+        ["狂飙", "第01集"],
+        ["斗破苍穹年番", "第01集"],
+        ["万里归途", "HD国语"],
+      ],
+      isrecord: false,
+      login: "点击了登录按钮",
+      is_user_info: false,
     };
   },
+  props: ["main_Login_status"],
   mounted() {
     if (this.$refs.serial[0]) {
       this.$refs.serial[0].style.backgroundColor = "#ff4a4a";
@@ -118,12 +162,39 @@ export default {
       this.$refs.serial[2].style.backgroundColor = "#ffb400";
     }
   },
-  methods: {},
+  methods: {
+    user_login() {
+      if (!this.main_Login_status) {
+        this.$emit("nav_login", this.login);
+      } else {
+        this.is_user_info = !this.is_user_info;
+      }
+    },
+  },
+  created() {
+    document.addEventListener("click", e => {
+      if (this.$refs.isrecord) {
+        let isSelf = this.$refs.isrecord.contains(e.target);
+        if (!isSelf) {
+          this.isrecord = false;
+        }
+      }
+
+      if (this.$refs.user_login) {
+        let isSelf = this.$refs.user_login.contains(e.target);
+        if (!isSelf) {
+          this.is_user_info = !this.is_user_info;
+        }
+      }
+    });
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .nav {
+  position: fixed;
+  z-index: 1;
   width: 100vw;
   height: 60px;
   min-height: 60px;
@@ -265,9 +336,55 @@ export default {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
       > i {
         font-size: 24px;
         color: #111111;
+        > &.fa-clock-o {
+          position: relative;
+          > .fa-clock-o_record {
+            position: absolute;
+            left: -116px;
+            width: 260px;
+            height: 198px;
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            > li {
+              font-size: 14px;
+              color: #333333;
+              display: flex;
+              justify-content: space-between;
+              margin: 15px 0;
+              > &:nth-child(1) {
+                color: #999999;
+                margin: 5px 0 20px 0;
+              }
+              > span {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+        > &.fa-user {
+          position: relative;
+        }
+      }
+      > .user_info {
+        position: absolute;
+        top: 50px;
+        right: -90px;
+        width: 220px;
+        height: 280px;
+        padding: 20px;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: stretch;
+        > li {
+          font-size: 14px;
+        }
       }
     }
   }
@@ -298,6 +415,24 @@ export default {
   animation: search_hint-in 0.5s reverse;
 }
 @keyframes search_hint-in {
+  0% {
+    transform: translateY(-5%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.recently_played_videos-enter-active {
+  animation: recently_played_videos-in 0.5s;
+}
+.recently_played_videos-leave-active {
+  animation: recently_played_videos-in 0.5s reverse;
+}
+@keyframes recently_played_videos-in {
   0% {
     transform: translateY(-5%);
     opacity: 0;

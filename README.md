@@ -12,7 +12,7 @@
 
 #### 软件架构
 
-本项目采用 : Vue2 + JavaScript + Axios 网络请求库 + Font Awesome 图标库 所编写
+本项目采用 : Vue2 + JavaScript + Element-UI组件库+ Axios 网络请求库 + Font Awesome 图标库 所编写
 
 #### 仓库贡献者
 
@@ -48,6 +48,7 @@
 
    ```shell
    npm  i  axios  -S
+   npm i element-ui -S
    npm install font-awesome --save
    ```
 

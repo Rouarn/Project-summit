@@ -4,6 +4,11 @@ import router from "./router";
 import store from "./store";
 // 引入 font-awesome 图标库
 import "font-awesome/css/font-awesome.css";
+// 引入 ElementUI 组件库
+import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
+
+Vue.use(ElementUI);
 
 Vue.config.productionTip = false;
 
