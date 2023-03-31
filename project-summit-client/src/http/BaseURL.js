@@ -6,8 +6,8 @@ const URL_ENV = {
   },
   PRO: {
     //封装生产环境所需要的url
-    BMDURL: "http://summer.xinlian.pub:3010",
-    UPLOADURL: "http://summer.xinlian.pub:9000",
+    BMDURL: "http://bmd.xinlian.pub",
+    UPLOADURL: "http://bmd.xinlian.pub:9000",
   },
 };
 
