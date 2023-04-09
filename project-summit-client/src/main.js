@@ -10,6 +10,9 @@ import "element-ui/lib/theme-chalk/index.css";
 
 Vue.use(ElementUI);
 
+const EventBus = new Vue();
+Vue.prototype.$EventBus = EventBus;
+
 Vue.config.productionTip = false;
 
 //声明全局变量保存上传文件的前缀
